@@ -3,6 +3,7 @@
     --color-2: #c9184a;
     --color-3: #f8f9fa;
     --color-4: #56cfe1;
+    --color-5: #fb5607;
     font-family: 'Explora', cursive;
 } 
 
@@ -48,6 +49,7 @@ header h1 {
 
 .shoe-card img {
     width: 100%;
+    border: 3px solid var(--color-5);
 }
 
 .shoe-card p {
