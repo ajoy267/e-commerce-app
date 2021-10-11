@@ -17,6 +17,9 @@ export function renderShoes(shoe) {
     const price = document.createElement('p');
     price.textContent = shoe.price;
 
-    shoeCard.append(shoeHeader, img, price);
+    const addButton = document.createElement('button');
+    addButton.textContent = 'add to cart';
+
+    shoeCard.append(shoeHeader, img, price, addButton);
     return shoeCard;
 }
