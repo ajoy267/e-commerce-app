@@ -1,6 +1,20 @@
 # E-Commerce App Day 1 ReadMe
 
+## Product Page
 
+### HTML
+* Title
+* Empty div for product list
+
+### JavaScript
+* Render Function file
+    * a function that loops through the array file
+    * returns the product info
+* Array File
+    * all the info for each product
+* (Bonus) TDD Render Function
+* App.js 
+    * generates the product
 
 
 
