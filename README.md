@@ -1,3 +1,13 @@
+# E-Commerce App Day 1 ReadMe
+
+
+
+
+
+
+
+
+
 # Alchemy Bootstrap Template
 
 ## Making a plan
