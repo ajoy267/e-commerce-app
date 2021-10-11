@@ -1,6 +1,6 @@
 // import functions and grab DOM elements
-import { renderShoes } from "./render-shoes.js";
-import { shoes } from "./shoes.js";
+import { renderShoes } from './render-shoes.js';
+import { shoes } from './shoes.js';
 // initialize global state
 const productList = document.getElementById('product-list');
 // set event listeners 
