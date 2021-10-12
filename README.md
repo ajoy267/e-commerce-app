@@ -17,6 +17,31 @@
     * generates the product
 
 
+# E-Commerce App Day 2 ReadMe
+
+## Cart Page
+
+### HTML 
+* Title
+* Table
+    * Table head 
+        * Product, Price, Qty, Total
+    * Table Body
+        * empty
+    * Table footer
+        * Order Total
+        * Order Total Amount
+
+### JavaScript
+* Render Function File
+    * render a function that loops through the array file
+    * return product id and and quantity 
+* Array File
+    * Getting the product code (id) and quantity 
+* App file 
+    * generate the table
+
+
 
 
 
