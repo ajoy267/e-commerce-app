@@ -7,3 +7,9 @@ export function findById(id, items) {
         }
     }
 }
+
+//export function calcOrderTotal(totals)
+    //const grandTotal = document.getElementById('grand-total');
+    //for (let total of totals) {
+        //grandTotal.textContent = 
+    //}
