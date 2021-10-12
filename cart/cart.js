@@ -1,6 +1,6 @@
 import { shoes } from '../data/shoes.js';
 import { cart } from '../data/cart-data.js';
-import { findById, calcOrderTotal } from '../utils.js';
+import { findById, calcOrderTotal, toUSD } from '../utils.js';
 import { renderItems } from '../render-items.js';
 
 
@@ -14,4 +14,4 @@ for (let cartItem of cart) {
 
 const orderTotal = calcOrderTotal(cart, shoes);
 const tdOrderTotal = document.getElementById('total');
-tdOrderTotal.textContent = orderTotal;
+tdOrderTotal.textContent = toUSD(orderTotal);
