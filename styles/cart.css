@@ -1,0 +1,15 @@
+table {
+    border: 2px solid var(--color-4);
+    border-collapse: collapse;
+    margin: auto;
+    font-size: 2rem;
+    width: 85%;
+    color: var(--color-3);
+}
+thead {
+    background-color: var(--color-4);
+}
+table th, table td {
+    padding: 10px;
+    text-align: center;
+}
