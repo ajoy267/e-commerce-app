@@ -8,8 +8,11 @@ export function findById(id, items) {
     }
 }
 
-//export function calcOrderTotal(totals)
-    //const grandTotal = document.getElementById('grand-total');
-    //for (let total of totals) {
-        //grandTotal.textContent = 
-    //}
+export function calcOrderTotal(cart, shoes) {
+    let orderTotal = 0;
+    for (let item of cart) {
+        const shoe = findById(item.id, shoes);
+        orderTotal = orderTotal + shoe.price * item.qty;
+    }
+    return orderTotal;
+}
