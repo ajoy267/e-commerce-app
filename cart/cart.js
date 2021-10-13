@@ -14,3 +14,19 @@ for (let cartItem of cart) {
 const orderTotal = calcOrderTotal(cart, shoes);
 const tdOrderTotal = document.getElementById('total');
 tdOrderTotal.textContent = toUSD(orderTotal);
+
+const placeOrder = document.getElementById('place-order');
+
+const clearCart = function() {
+    localStorage.removeItem('CART');
+    window.location.replace('..');
+};
+
+if (cart.length <= 0) {
+    placeOrder.disabled = true;
+} else {
+    placeOrder.disabled = false;
+    placeOrder.addEventListener('click', () => {
+        clearCart();
+    });
+}
