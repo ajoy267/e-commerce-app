@@ -54,3 +54,8 @@ test('getCart should return the cart if theres anything in it', (expect) => {
     const cart = getCart();
     expect.deepEqual(cart, fakeCart);
 });
+
+test('getCart should return the empty if there is nothing in the cart', (expect) => {
+    const cart = getCart();
+    expect.deepEqual(cart, []);
+});
