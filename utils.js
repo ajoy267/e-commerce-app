@@ -33,8 +33,8 @@ export function addItem(id) {
     if (getCartItem) {
         getCartItem.qty++;
     } else {
-        const newItem = { id: id, qty: 1 };
-        cart.push(newItem);
+        const newCartItem = { id: id, qty: 1 };
+        cart.push(newCartItem);
     }
     const stringCart = JSON.stringify(cart);
     localStorage.setItem('CART', stringCart);

@@ -19,6 +19,8 @@ export function renderShoes(shoe) {
 
     const addButton = document.createElement('button');
     addButton.textContent = 'add to cart';
+    addButton.id = shoe.id;
+    addButton.classList.add('add-button');
 
     shoeCard.append(shoeHeader, img, price, addButton);
     return shoeCard;
