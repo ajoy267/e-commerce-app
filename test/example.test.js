@@ -3,7 +3,7 @@
 
 import { renderShoes } from '../render-shoes.js';
 import { shoes } from '../data/shoes.js';
-import { findById, getCart } from '../utils.js';
+import { findById, getCart, addItem } from '../utils.js';
 
 const test = QUnit.test;
 
@@ -20,6 +20,7 @@ test('renderShoes should output HTML', (expect) => {
     // Make assertions about what is expected versus the actual result
     expect.equal(actual, expected);
 });
+
 test('renderShoes should output HTML', (expect) => {
     //Arrange
     // Set up your arguments and expectations
@@ -56,6 +57,30 @@ test('getCart should return the cart if theres anything in it', (expect) => {
 });
 
 test('getCart should return the empty if there is nothing in the cart', (expect) => {
+    localStorage.removeItem('CART');
     const cart = getCart();
     expect.deepEqual(cart, []);
+});
+
+test('addItem should increase the amount of that item in the cart', (expect) => {
+    const fakeCart = [
+        { id: '1', qty: 2 },
+        { id: '2', qty: 1 }
+    ];
+    localStorage.setItem('CART', JSON.stringify(fakeCart));
+    addItem('2');
+    const cart = getCart();
+    const expected = [
+        { id: '1', qty: 2 },
+        { id: '2', qty: 2 }
+    ];
+    expect.deepEqual(cart, expected);
+});
+
+test('addItem should add an item if its not already in the cart', (expect) => {
+    localStorage.removeItem('CART');
+    const expected = [{ id: '1', qty: 1 }];
+    addItem('1');
+    const cart = getCart();
+    expect.deepEqual(cart, expected);
 });

@@ -26,3 +26,16 @@ export function getCart() {
     const cart = JSON.parse(cartString);
     return cart;
 }
+
+export function addItem(id) {
+    const cart = getCart();
+    const getCartItem = findById(id, cart);
+    if (getCartItem) {
+        getCartItem.qty++;
+    } else {
+        const newItem = { id: id, qty: 1 };
+        cart.push(newItem);
+    }
+    const stringCart = JSON.stringify(cart);
+    localStorage.setItem('CART', stringCart);
+}
