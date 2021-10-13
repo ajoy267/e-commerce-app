@@ -10,7 +10,7 @@ for (let shoe of shoes) {
     productList.append(shoeCard);
 }
 
-const addButtons = document.querySelectorAll('add-button');
+const addButtons = document.querySelectorAll('.add-button');
 for (let button of addButtons) {
     button.addEventListener('click', () => {
         addItem(button.id);
