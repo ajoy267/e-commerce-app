@@ -44,8 +44,6 @@
 
 # E-Commerce App Day 3 ReadMe
 
-## Product Page
-
 ### Basic Plan
 * Add Product to shopping cart page
     * Add to cart button
