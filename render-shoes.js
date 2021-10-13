@@ -1,3 +1,4 @@
+import { toUSD } from './utils.js';
 // shoe object sample
 //        id: '1',
 //        name: 'Nike ZoomX Vaporfly Next% 2',
@@ -15,10 +16,12 @@ export function renderShoes(shoe) {
     img.src = shoe.img;
 
     const price = document.createElement('p');
-    price.textContent = shoe.price;
+    price.textContent = toUSD(shoe.price);
 
     const addButton = document.createElement('button');
     addButton.textContent = 'add to cart';
+    addButton.id = shoe.id;
+    addButton.classList.add('add-button');
 
     shoeCard.append(shoeHeader, img, price, addButton);
     return shoeCard;

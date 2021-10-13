@@ -20,3 +20,22 @@ export function calcOrderTotal(cart, shoes) {
 export function toUSD(number) {
     return number.toLocaleString('en-us', { style: 'currency', currency: 'USD' });
 }
+
+export function getCart() {
+    const cartString = localStorage.getItem('CART') || '[]';
+    const cart = JSON.parse(cartString);
+    return cart;
+}
+
+export function addItem(id) {
+    const cart = getCart();
+    const getCartItem = findById(id, cart);
+    if (getCartItem) {
+        getCartItem.qty++;
+    } else {
+        const newCartItem = { id: id, qty: 1 };
+        cart.push(newCartItem);
+    }
+    const stringCart = JSON.stringify(cart);
+    localStorage.setItem('CART', stringCart);
+}
