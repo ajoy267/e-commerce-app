@@ -42,6 +42,28 @@
     * generate the table
 
 
+# E-Commerce App Day 3 ReadMe
+
+## Product Page
+
+### Basic Plan
+* Add Product to shopping cart page
+    * Add to cart button
+        * gets product id and adds to the quantity
+        * stores in local storage
+        * tracks how qty of item and displays in shoe card
+* Get Shopping cart from local storage on shopping cart page
+* Place Order Button
+    * if there are no items disable button
+    * if there are items in cart 
+        * button removes local storage (items in cart)
+            * redirects back to home page
+* TDD tests
+    * for each function
+        * getCart
+        * addToCart
+        * clearCart
+
 
 
 
