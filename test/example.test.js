@@ -3,7 +3,7 @@
 
 import { renderShoes } from '../render-shoes.js';
 import { shoes } from '../data/shoes.js';
-import { findById } from '../utils.js';
+import { findById, getCart } from '../utils.js';
 
 const test = QUnit.test;
 
@@ -43,4 +43,14 @@ test('findById should find the correct item by its id', (expect) => {
     };
     const actual = findById('1', shoes);
     expect.deepEqual(actual, expected);
+});
+
+test('getCart should return the cart if theres anything in it', (expect) => {
+    const fakeCart = [
+        { id: '1', qty: 2 },
+        { id: '2', qty: 1 }
+    ];
+    localStorage.setItem('CART', JSON.stringify(fakeCart));
+    const cart = getCart();
+    expect.deepEqual(cart, fakeCart);
 });
