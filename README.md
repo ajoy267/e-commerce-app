@@ -63,6 +63,14 @@
         * clearCart
 
 
+# E-Commerce App Day 4 ReadMe
+
+### Basic Plan
+* Make Admin Page
+    * use form to generate new product info
+        * adds new product info into local storage
+* move product list into local storage
+
 
 
 

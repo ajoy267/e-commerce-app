@@ -1,3 +1,5 @@
+import { shoes } from './data/shoes.js';
+
 // This is looping each item to match the item with the id
 // and then return what that item is if it mathces the id
 export function findById(id, items) {
@@ -38,4 +40,22 @@ export function addItem(id) {
     }
     const stringCart = JSON.stringify(cart);
     localStorage.setItem('CART', stringCart);
+}
+
+export function getProducts() {
+    let lsProducts = localStorage.getItem('PRODUCTS');
+    const products = JSON.parse(lsProducts);
+
+    if (!products) {
+        const shoeString = JSON.stringify(shoes);
+        localStorage.setItem('PRODUCTS', shoeString);
+    }
+    return products || shoes;
+}
+
+export function addProduct(newShoe) {
+    let products = getProducts();
+    products.push(newShoe);
+    let productString = JSON.stringify(products);
+    localStorage.setItem('PRODUCTS', productString);
 }
