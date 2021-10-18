@@ -1,8 +1,8 @@
-import { shoes } from '../data/shoes.js';
-import { findById, calcOrderTotal, toUSD, getCart } from '../utils.js';
+import { findById, calcOrderTotal, toUSD, getCart, getProducts } from '../utils.js';
 import { renderItems } from '../render-items.js';
 
 const cart = getCart();
+const shoes = getProducts();
 const tbody = document.getElementById('table-body');
 for (let cartItem of cart) {
     const product = findById(cartItem.id, shoes);
