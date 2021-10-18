@@ -3,7 +3,7 @@
 
 import { renderShoes } from '../render-shoes.js';
 import { shoes } from '../data/shoes.js';
-import { findById, getCart, addItem } from '../utils.js';
+import { findById, getCart, addItem, addProduct, getProducts } from '../utils.js';
 
 const test = QUnit.test;
 
@@ -83,4 +83,17 @@ test('addItem should add an item if its not already in the cart', (expect) => {
     addItem('1');
     const cart = getCart();
     expect.deepEqual(cart, expected);
+});
+
+test('addProduct should add a product to the shoes array', (expect) => {
+    let products = getProducts();
+    const newProduct = {
+        id: '6',
+        name: 'Nike Air Zoom Alphafly NEXT%',
+        img: './assests/alphafly.jpeg',
+        price: 275
+    };
+    addProduct(newProduct);
+    products = getProducts();
+    expect.equal(products.length, 6);
 });
