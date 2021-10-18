@@ -13,4 +13,5 @@ form.addEventListener('submit', (e) => {
     };
     addProduct(newShoe);
     alert('A new shoe was added');
+    form.reset();
 });
